@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FABRI LIFE</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 4px;
+        }
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .contact-icon {
+            font-size: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+        .cover-photo {
+            width: 100%;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #333;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+            justify-content: space-between;
+        }
+        .product-card {
+            width: 48%;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 15px;
+        }
+        .product-card img {
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            margin: 0;
+        }
+        .sale-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+        .product-title {
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        .price {
+            font-size: 14px;
+            color: #555;
+            margin-top: auto;
+        }
+        .price .old-price {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .price .discounted-price {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        .buy-button {
+            display: block;
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px auto 0 auto;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">MH Fashion</div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search a product">
+    </div>
+    <a href="https://m.me/YOUR_MESSENGER_ID" class="contact-icon" target="_blank">
+         &#9993;
+    </a>
+</header>
+
+<!-- Cover Photo Section -->
+<img src="photo/cover.png" alt="Cover Photo" class="cover-photo">
+
+<!-- Section Title 
+<div class="section-title">New Collection</div> -->
+
+<div class="product-list">
+    <!-- Product 1 -->
+    <div class="product-card">
+        <div class="sale-tag">SALE</div>
+        <img src="photo/02.jpg" alt="Mens Urban Edition Premium T-shirt - Chill">
+        <div class="product-title">Mens Urban Edition Premium T-shirt - Chill</div>
+        <div class="price">
+            <span class="old-price">৳785</span>
+            <span class="discounted-price">৳699</span>
+        </div>
+        <a href="product_Details_1.html" class="buy-button">Buy Now</a>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <div class="sale-tag">SALE</div>
+        <img src="photo/01.png" alt="Mens Metro Edition Premium T-shirt">
+        <div class="product-title">Mens Metro Edition Premium T-shirt</div>
+        <div class="price">
+            <span class="old-price">৳785</span>
+            <span class="discounted-price">৳640</span>
+        </div>
+        <a href="#" class="buy-button">Buy Now</a>
+    </div>
+
+    <!-- Product 1 -->
+    <div class="product-card">
+        <div class="sale-tag">SALE</div>
+        <img src="photo/02.jpg" alt="Mens Urban Edition Premium T-shirt - Chill">
+        <div class="product-title">Mens Urban Edition Premium T-shirt - Chill</div>
+        <div class="price">
+            <span class="old-price">৳785</span>
+            <span class="discounted-price">৳699</span>
+        </div>
+        <a href="#" class="buy-button">Buy Now</a>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <div class="sale-tag">SALE</div>
+        <img src="photo/01.png" alt="Mens Metro Edition Premium T-shirt">
+        <div class="product-title">Mens Metro Edition Premium T-shirt</div>
+        <div class="price">
+            <span class="old-price">৳785</span>
+            <span class="discounted-price">৳640</span>
+        </div>
+        <a href="#" class="buy-button">Buy Now</a>
+    </div>
+</div>
+
+</body>
+</html>
