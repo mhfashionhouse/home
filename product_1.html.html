@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   <style>
     html {
@@ -29,7 +30,8 @@
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       padding: 2rem;
-      max-width: 400px;
+      max-width: 600px; /* Increased max-width for larger screens */
+      width: 90%; /* Make the form responsive */
       margin: 1rem auto;
     }
 
@@ -78,7 +80,7 @@
     }
 
     .radio-group {
-      display: block; /* This ensures each radio button is on its own line */
+      display: block; /* Ensures each radio button is on its own line */
       margin-bottom: 5px; /* Adds space between the buttons */
     }
 
