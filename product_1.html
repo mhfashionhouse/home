@@ -30,8 +30,8 @@
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       padding: 2rem;
-      max-width: 600px; /* Increased max-width for larger screens */
-      width: 90%; /* Make the form responsive */
+      max-width: 600px;
+      width: 90%;
       margin: 1rem auto;
     }
 
@@ -80,8 +80,8 @@
     }
 
     .radio-group {
-      display: block; /* Ensures each radio button is on its own line */
-      margin-bottom: 5px; /* Adds space between the buttons */
+      display: block;
+      margin-bottom: 5px;
     }
 
     #message {
@@ -92,7 +92,14 @@
       margin-top: 20px;
     }
 
-    /* Responsive adjustments */
+    #total-price {
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+
     @media (max-width: 480px) {
       .hero {
         padding: 1rem;
@@ -118,7 +125,7 @@
 
     <div class="field">
       <div class="control">
-        <input class="input" type="hidden" name="Product" required value="SH-100" /> <!-- SH-2 -->
+        <input class="input" type="hidden" name="Product" required value="SH-100" />
       </div>
     </div>
 
@@ -155,7 +162,7 @@
         <label class="radio">
           <input type="radio" name="size" value="৫৪" required /> ৫৪"
         </label>
-	<label class="radio">
+        <label class="radio">
           <input type="radio" name="size" value="৫৬" required /> ৫৬"
         </label>
         <label class="radio">
@@ -190,6 +197,8 @@
       </div>
     </div>
 
+    <div id="total-price">Total Price: ৳ <span id="price">900</span></div>
+
     <div class="field">
       <div class="control">
         <button class="button is-primary" type="submit" id="submit-button">Submit Order</button>
@@ -200,6 +209,37 @@
   <div id="message"></div>
 
   <script>
+    const basePrice = 900;
+    const hijabPrice = 300;
+    const deliveryPrices = {
+      "Inside Dhaka": 100,
+      "Outside Dhaka": 200
+    };
+
+    function updateTotalPrice() {
+      let totalPrice = basePrice;
+
+      // Check Hijab selection
+      const hijabYes = document.querySelector('input[name="Hijab"]:checked');
+      if (hijabYes && hijabYes.value === "Yes") {
+        totalPrice += hijabPrice;
+      }
+
+      // Check delivery selection
+      const deliveryOption = document.querySelector('input[name="Order"]:checked');
+      if (deliveryOption) {
+        totalPrice += deliveryPrices[deliveryOption.value];
+      }
+
+      document.getElementById("price").textContent = totalPrice;
+      return totalPrice; // Return the total price
+    }
+
+    // Add event listeners for Hijab and Order options
+    document.querySelectorAll('input[name="Hijab"]').forEach(input => input.addEventListener('change', updateTotalPrice));
+    document.querySelectorAll('input[name="Order"]').forEach(input => input.addEventListener('change', updateTotalPrice));
+
+    // Form submission
     document.getElementById("form").addEventListener("submit", function (e) {
       e.preventDefault();
       document.getElementById("message").textContent = "Submitting..";
@@ -207,6 +247,9 @@
       document.getElementById("submit-button").disabled = true;
 
       var formData = new FormData(this);
+      const totalPrice = updateTotalPrice(); // Get the updated total price
+      formData.append("Total Price", totalPrice); // Append the total price to form data
+
       var keyValuePairs = [];
       for (var pair of formData.entries()) {
         keyValuePairs.push(pair[0] + "=" + pair[1]);
@@ -224,19 +267,14 @@
         })
         .then(function (response) {
           document.getElementById("message").textContent = "Data submitted successfully!";
-          document.getElementById("message").style.backgroundColor = "green";
-          document.getElementById("message").style.color = "beige";
-          document.getElementById("submit-button").disabled = false;
-          document.getElementById("form").reset();
-
-          setTimeout(function () {
-            document.getElementById("message").textContent = "";
-            document.getElementById("message").style.display = "none";
-          }, 2600);
+          document.getElementById("message").style.color = "green";
         })
         .catch(function (error) {
-          document.getElementById("message").textContent = "An error occurred.";
-          document.getElementById("message").style.display = "block";
+          document.getElementById("message").textContent = "Error: " + error.message;
+          document.getElementById("message").style.color = "red";
+        })
+        .finally(function () {
+          document.getElementById("submit-button").disabled = false; // Re-enable button after submission
         });
     });
   </script>
