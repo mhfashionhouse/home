@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MH Fashion</title>
+    <title>FABRI LIFE</title>
     <style>
         * {
             box-sizing: border-box;
@@ -19,31 +19,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 15px;
+            padding: 10px;
             background-color: #fff;
             border-bottom: 1px solid #ddd;
         }
+        .icon {
+            width: 30px;
+            height: 30px;
+        }
         .logo {
-            font-weight: bold;
-            font-size: 18px;
-            font-family: PT Serif, sans-serif;
-            
-        }
-        .search-bar {
-            flex-grow: 1;
-            margin: 0 4px;
-        }
-        .search-bar input[type="text"] {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 12px;
-        }
-        .contact-icon {
-            font-size: 20px;
-            color: #333;
-            text-decoration: none;
+            width: 100px;
         }
         .cover-photo {
             width: 100%;
@@ -63,7 +48,7 @@
             justify-content: space-between;
         }
         .product-card {
-            width: 48%;
+            width: calc(50% - 10px);
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -72,6 +57,11 @@
             display: flex;
             flex-direction: column;
             padding-bottom: 15px;
+        }
+        @media (min-width: 768px) {
+            .product-card {
+                width: calc(25% - 10px);
+            }
         }
         .product-card img {
             width: 100%;
@@ -126,12 +116,10 @@
 <body>
 
 <header>
-    <div class="logo">MH Fashion</div>
-    <div class="search-bar">
-        <input type="text" placeholder="Search a product">
-    </div>
+    <img src="photo/hamburger.png" alt="Menu" class="icon">
+    <img src="photo/logo.png" alt="FABRI LIFE" class="logo">
     <a href="https://m.me/YOUR_MESSENGER_ID" class="contact-icon" target="_blank">
-         <img src="photo/icon.png" alt="">
+        <img src="photo/contact.png" alt="Contact" class="icon">
     </a>
 </header>
 
@@ -139,7 +127,7 @@
 <img src="photo/cover.png" alt="Cover Photo" class="cover-photo">
 
 <!-- Section Title 
-<div class="section-title">New Collection</div> -->
+<div class="section-title">New Collection</div>-->
 
 <div class="product-list">
     <!-- Product 1 -->
@@ -151,7 +139,7 @@
             <span class="old-price">৳785</span>
             <span class="discounted-price">৳699</span>
         </div>
-        <a href="product_Details_1.html" class="buy-button">Buy Now</a>
+        <a href="#" class="buy-button">Buy Now</a>
     </div>
 
     <!-- Product 2 -->
@@ -165,8 +153,7 @@
         </div>
         <a href="#" class="buy-button">Buy Now</a>
     </div>
-
-    <!-- Product 1 -->
+     <!-- Product 1 -->
     <div class="product-card">
         <div class="sale-tag">SALE</div>
         <img src="photo/02.jpg" alt="Mens Urban Edition Premium T-shirt - Chill">
