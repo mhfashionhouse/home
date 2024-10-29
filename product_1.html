@@ -15,9 +15,15 @@
     }
 
     .hero {
-      margin: 2rem auto;
+      margin: 0rem auto;
       text-align: center;
     }
+ .details {
+	margin: 0rem 2rem;
+       text-align: center;
+	color: #333;
+    }
+
 
     .hero .title {
       color: #333;
@@ -118,93 +124,117 @@
 </head>
 <body>
   
-  <form id="form" class="form-container" method="POST">
-    <section class="hero">
-      <h1 class="title">নিচের তথ্যগুলো দিন</h1>
-    </section>
+  <div id="form-container" class="form-container">
+    <form id="form" method="POST">
+      <section class="hero">
+        <h1 class="title">নিচের তথ্যগুলো দিন</h1>
+      </section>
+	<section class="">
+        <h4 class="details">অর্ডার করতে সমস্যা হলে শুধুমাত্র আপনার নাম্বারটি দিন খুব শীঘ্রই আপনার সাথে যোগাযোগ করা হবে</h4>
+      </section>
 
-    <div class="field">
-      <div class="control">
-        <input class="input" type="hidden" name="Product" required value="SH-100" />
+      <div class="field">
+        <div class="control">
+          <input class="input" type="hidden" name="Product" required value="SH-100" />
+        </div>
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label">আপনার নাম</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Your Name" name="Client Name" required />
+      <div class="field">
+        <label class="label">আপনার নাম</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Your Name" name="Client Name" required />
+        </div>
       </div>
-    </div>
 	
-    <div class="field">
-      <label class="label">ফোন নাম্বার</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="ফোন নাম্বার লিখুন" name="Phone Number" required />
+      <div class="field">
+        <label class="label">ফোন নাম্বার</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="ফোন নাম্বার লিখুন" name="Phone Number" required />
+        </div>
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label">সম্পূর্ণ ঠিকানা</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="House Number and Street Name" name="Address" required />
+      <div class="field">
+        <label class="label">সম্পূর্ণ ঠিকানা</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="House Number and Street Name" name="Address" required />
+        </div>
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label">সাইজ:</label>
-      <div class="control">
-        <label class="radio">
-          <input type="radio" name="size" value="৫০" required /> ৫০"
-        </label>
-        <label class="radio">
-          <input type="radio" name="size" value="৫২" required /> ৫২"
-        </label>
-        <label class="radio">
-          <input type="radio" name="size" value="৫৪" required /> ৫৪"
-        </label>
-        <label class="radio">
-          <input type="radio" name="size" value="৫৬" required /> ৫৬"
-        </label>
-        <label class="radio">
-          <input type="radio" name="size" value="৫৮" required /> ৫৮"
-        </label>
+      <div class="field">
+        <label class="label">সাইজ:</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="size" value="৫০" required /> ৫০"
+          </label>
+          <label class="radio">
+            <input type="radio" name="size" value="৫২" required /> ৫২"
+          </label>
+          <label class="radio">
+            <input type="radio" name="size" value="৫৪" required /> ৫৪"
+          </label>
+          <label class="radio">
+            <input type="radio" name="size" value="৫৬" required /> ৫৬"
+          </label>
+          <label class="radio">
+            <input type="radio" name="size" value="৫৮" required /> ৫৮"
+          </label>
+        </div>
       </div>
-    </div>
+	
+	<div class="field">
+        <label class="label">Color</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="Color" value="Red" required /> Red
+          </label>
+          <label class="radio">
+            <input type="radio" name="Color" value="Blue" required /> Blue
+          </label>
+          <label class="radio">
+            <input type="radio" name="Color" value="Green" required /> Green
+          </label>
+          <label class="radio">
+            <input type="radio" name="Color" value="White" required /> White
+          </label>
+        </div>
+      </div>
 
-    <div class="field">
-      <label class="label">Hijab</label>
-      <div class="control">
-        <label class="radio">
-          <input type="radio" name="Hijab" value="Yes" required /> Yes
-        </label>
-        <label class="radio">
-          <input type="radio" name="Hijab" value="No" required /> No
-        </label>
-      </div>
-    </div>
 
-    <div class="field radio-group">
-      <label class="label">ডেলিভারি চার্জ</label>
-      <div class="control">
-        <label class="radio">
-          <input type="radio" name="Order" value="Inside Dhaka" required /> ঢাকা শহরের ভিতরে - ৳ ১০০
-        </label>
+      <div class="field">
+        <label class="label">Hijab</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="Hijab" value="Yes" required /> Yes
+          </label>
+          <label class="radio">
+            <input type="radio" name="Hijab" value="No" required /> No
+          </label>
+        </div>
       </div>
-      <div class="control">
-        <label class="radio">
-          <input type="radio" name="Order" value="Outside Dhaka" required /> ঢাকা শহরের বাইরে - ৳ ২০০
-        </label>
-      </div>
-    </div>
 
-    <div id="total-price">Total Price: ৳ <span id="price">900</span></div>
-
-    <div class="field">
-      <div class="control">
-        <button class="button is-primary" type="submit" id="submit-button">Submit Order</button>
+      <div class="field radio-group">
+        <label class="label">ডেলিভারি চার্জ</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="Order" value="Inside Dhaka" required /> ঢাকা শহরের ভিতরে - ৳ ১০০
+          </label>
+        </div>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="Order" value="Outside Dhaka" required /> ঢাকা শহরের বাইরে - ৳ ২০০
+          </label>
+        </div>
       </div>
-    </div>
-  </form>
+
+      <div id="total-price">Total Price: ৳ <span id="price">900</span></div>
+
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary" type="submit" id="submit-button">Submit Order</button>
+        </div>
+      </div>
+    </form>
+  </div>
   
   <div id="message"></div>
 
@@ -232,7 +262,6 @@
       }
 
       document.getElementById("price").textContent = totalPrice;
-      return totalPrice; // Return the total price
     }
 
     // Add event listeners for Hijab and Order options
@@ -247,13 +276,13 @@
       document.getElementById("submit-button").disabled = true;
 
       var formData = new FormData(this);
-      const totalPrice = updateTotalPrice(); // Get the updated total price
-      formData.append("Total Price", totalPrice); // Append the total price to form data
-
       var keyValuePairs = [];
       for (var pair of formData.entries()) {
         keyValuePairs.push(pair[0] + "=" + pair[1]);
       }
+
+      // Add total price to the form data
+      keyValuePairs.push("Total Price=" + document.getElementById("price").textContent);
 
       var formDataString = keyValuePairs.join("&");
 
@@ -266,15 +295,15 @@
           },
         })
         .then(function (response) {
-          document.getElementById("message").textContent = "Data submitted successfully!";
-          document.getElementById("message").style.color = "green";
+          // Replace form with success message
+          document.getElementById("form-container").innerHTML = "<h2>আপনার অর্ডারটি সম্পন্ন হয়েছে, ধন্যবাদ</h2>";
+          document.getElementById("message").style.display = "none"; // Hide the previous message
         })
         .catch(function (error) {
-          document.getElementById("message").textContent = "Error: " + error.message;
-          document.getElementById("message").style.color = "red";
-        })
-        .finally(function () {
-          document.getElementById("submit-button").disabled = false; // Re-enable button after submission
+          document.getElementById("message").textContent = "An error occurred. Please try again.";
+          document.getElementById("message").style.backgroundColor = "red";
+          document.getElementById("message").style.color = "white";
+          document.getElementById("submit-button").disabled = false;
         });
     });
   </script>
